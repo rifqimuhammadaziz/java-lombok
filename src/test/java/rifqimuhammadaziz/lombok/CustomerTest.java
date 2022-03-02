@@ -1,5 +1,6 @@
 package rifqimuhammadaziz.lombok;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class CustomerTest {
@@ -12,5 +13,12 @@ public class CustomerTest {
 
         System.out.println(customer.getId());
         System.out.println(customer.getName());
+    }
+
+    @Test
+    void testCustomerConstructor() {
+        Customer customer = new Customer("0001", "Xenosty");
+        Assertions.assertEquals("0001", customer.getId());
+        Assertions.assertEquals("Xenosty", customer.getName());
     }
 }
