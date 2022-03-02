@@ -15,4 +15,10 @@ public class LoginTest {
         Assertions.assertEquals("xenosty", login2.getUsername());
         Assertions.assertEquals("secretpassword", login2.getPassword());
     }
+
+    @Test
+    void testToString() {
+        Login login = Login.create("xenosty", "secretpassword");
+        System.out.println(login);
+    }
 }
