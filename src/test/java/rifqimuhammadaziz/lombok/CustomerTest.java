@@ -21,4 +21,14 @@ public class CustomerTest {
         Assertions.assertEquals("0001", customer.getId());
         Assertions.assertEquals("Xenosty", customer.getName());
     }
+
+    @Test
+    void testEquals() {
+        // only compare 'id' (exclude 'name')
+        Customer customer1 = new Customer("0001", "Xenosty 1");
+        Customer customer2 = new Customer("0001", "Xenosty 2");
+
+        Assertions.assertEquals(customer1, customer2);
+        Assertions.assertEquals(customer1.hashCode(), customer2.hashCode());
+    }
 }
